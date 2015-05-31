@@ -38,3 +38,4 @@ end
 
 gem "neat"
 gem "bitters"
+gem "carrierwave"
