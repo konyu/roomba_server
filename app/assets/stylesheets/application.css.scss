@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bourbon";
+ @import "neat";
+
+ section {
+   @include outer-container;
+ }
+
+ .center {
+   @include span-columns(6);
+   @include shift(3);
+ }
+// @import "base/base";

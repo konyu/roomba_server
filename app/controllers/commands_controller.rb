@@ -1,9 +1,16 @@
 class CommandsController < ApplicationController
   before_action :set_command, only: [:show, :edit, :update, :destroy]
 
+  def send_command
+    @command = Command.new(command: command_params["command"])
+    @command.save!
+    p "SENd command"
+  end
+
   # GET /commands
   # GET /commands.json
   def index
+    @command = Command.new
     @commands = Command.all
   end
 

@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  resources :images
-  resources :commands
+  resources :images do
+    collection do
+        get "newest"
+    end
+  end
+  resources :commands do
+    # collection do
+    #     post "send"
+    # end
+  end
+
+  post 'commands/send_command' => 'commands#send_command'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
