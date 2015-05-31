@@ -26,4 +26,24 @@ $("#right").click(function(){
 });
 
 
+inertval = 3000;	//何秒毎に処理をするか（ここでは5秒）
+
+//タイマー開始関数
+function startTimer(){
+	//inertvalの秒数毎にsyori関数を実行する。その情報をtimer変数へ入れている。
+	timer = setInterval(syori, inertval);
+}
+
+//タイマー開始
+startTimer();
+
+function syori(){
+  console.log("get image");
+  $.get("/images/newest",
+  function(data){
+    //リクエストが成功した際に実行する関数
+  }
+);
+}
+
 });
