@@ -1,5 +1,11 @@
 class CommandsController < ApplicationController
   before_action :set_command, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery :except => [:fetch_command]
+
+  def fetch_command
+    @command = Command.first
+  end
+
 
   def send_command
     @command = Command.new(command: command_params["command"])

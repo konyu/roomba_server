@@ -1,0 +1,6 @@
+<% if @command.present?%>
+  <%= @command.command %>
+  <% @command.delete %>
+<% else %>
+nil
+<% end %>

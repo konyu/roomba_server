@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     end
   end
   resources :commands do
-    # collection do
-    #     post "send"
-    # end
+    collection do
+      get "fetch_command"
+    end
   end
 
   post 'commands/send_command' => 'commands#send_command'
