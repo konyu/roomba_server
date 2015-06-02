@@ -73,7 +73,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      binding.pry
       params.require(:image).permit(:img_path, :image, :image_cache, :remove_image)
     end
 end
