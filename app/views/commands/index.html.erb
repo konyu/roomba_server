@@ -9,13 +9,12 @@
       <%= f.hidden_field(:command) %>
       <%#= f.submit("foward", name: nil, disabled: true) %>
     <% end %>
-    <button id="foward">foward</button>
-    <button id="back">back</button>
-    <button id="left">left</button>
-    <button id="right">right</button>
-
-
-    <%= link_to 'link', newest_images_path, :remote => true %>
+    <div>
+      <button id="foward" class="btn btn-lg btn-primary">foward</button>
+      <button id="back" class="btn btn-lg btn-success">back</button>
+      <button id="left" class="btn btn-lg btn-warning">left</button>
+      <button id="right" class="btn btn-lg btn-danger">right</button>
+    </div>
   </div>
 </section>
 
