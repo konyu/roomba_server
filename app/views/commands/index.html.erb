@@ -1,19 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <section>
-  <div class="center">
-    <div class="img_area">
-      <%= image_tag("/images/notfound.jpg")%>
-    </div>
-    <%= form_for(@command, url: commands_send_command_path, remote: true) do |f| %>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 panel panel-default">
+      <div class="img_area panel-body">
+        <%= image_tag("/images/notfound.jpg")%>
+      </div>
+      <%= form_for(@command, url: commands_send_command_path, remote: true) do |f| %>
       <%= f.hidden_field(:command) %>
       <%#= f.submit("foward", name: nil, disabled: true) %>
-    <% end %>
-    <div>
-      <button id="foward" class="btn btn-lg btn-primary">foward</button>
-      <button id="back" class="btn btn-lg btn-success">back</button>
-      <button id="left" class="btn btn-lg btn-warning">left</button>
-      <button id="right" class="btn btn-lg btn-danger">right</button>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 panel panel-default">
+      <div class="img_area panel-body">
+        <button id="foward" class="btn btn-lg btn-primary">foward</button>
+        <button id="back" class="btn btn-lg btn-success">back</button>
+        <button id="left" class="btn btn-lg btn-warning">left</button>
+        <button id="right" class="btn btn-lg btn-danger">right</button>
+      </div>
     </div>
   </div>
 </section>
