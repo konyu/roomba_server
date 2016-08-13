@@ -10,7 +10,6 @@ class CommandsController < ApplicationController
   def send_command
     @command = Command.new(command: command_params["command"])
     @command.save!
-    p "SENd command"
   end
 
   # GET /commands

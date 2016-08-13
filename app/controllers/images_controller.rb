@@ -32,6 +32,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
+        Image.first.delete if Image.all.count > 1
         format.html { redirect_to @image, notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @image }
       else

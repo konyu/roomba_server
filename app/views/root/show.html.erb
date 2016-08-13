@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" style="text-align: center">
+    <%= image_tag("/images/notfound.jpg", class: "center-img")%>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+<%= form_for(@command, url: commands_send_command_path, remote: true) do |f| %>
+<%= f.hidden_field(:command) %>
+<%#= f.submit("foward", name: nil, disabled: true) %>
+<% end %>
+
+<div class="row" style="padding-top:30px;">
+  <div class="col-md-3" style="margin-bottom:30px;">
+    <button id="foward" class="btn btn-block btn-smp btn-primary">foward</button>
+  </div>
+  <div class="col-md-3" style="margin-bottom:30px;">
+    <button id="back" class="btn btn-block btn-smp btn-success">back</button>
+  </div>
+  <div class="col-md-3" style="margin-bottom:30px;">
+    <button id="left" class="btn btn-block btn-smp btn-warning">left</button>
+  </div>
+  <div class="col-md-3" style="margin-bottom:30px;">
+    <button id="right" class="btn btn-block btn-smp btn-danger">right</button>
+  </div>
+</div>

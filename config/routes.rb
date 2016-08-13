@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to: "root#show"
+  resource :root
+
   resources :images do
     collection do
         get "newest"
