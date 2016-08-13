@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   protect_from_forgery :except => [:create]
 
   def newest
-    @image = Image.last
+    @img_path = Image.read_file
   end
   # GET /images
   # GET /images.json
@@ -29,17 +29,8 @@ class ImagesController < ApplicationController
   # POST /images.json
   def create
     @image = Image.new(image_params)
-
-    respond_to do |format|
-      if @image.save
-        Image.first.delete if Image.all.count > 1
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @image }
-      else
-        format.html { render :new }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
-    end
+    @image.save_file
+    render json: { result: true }
   end
 
   # PATCH/PUT /images/1
