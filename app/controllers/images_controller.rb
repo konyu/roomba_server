@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   protect_from_forgery :except => [:create]
 
   def newest
-    @img_path = Image.read_file
+    @img_path = Image.read_file + "?" + Time.now.usec.to_s
   end
   # GET /images
   # GET /images.json
